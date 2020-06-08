@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y ffmpeg
 RUN pip install Flask gunicorn ffmpy
 RUN mkdir -p /tmp/video_conversion
 
+# Forward Port
 EXPOSE 5000
 
 # Run the web service on container startup. Here we use the gunicorn
