@@ -9,8 +9,9 @@ COPY . ./
 
 # Install production dependencies.
 #RUN echo 'deb http://ftp.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
-RUN apt-get update && apt-get install -y ffmpeg
-RUN pip install Flask gunicorn ffmpy google-cloud-storage
+RUN apt-get update
+RUN apt-get install -y ffmpeg
+RUN pip install Flask gunicorn ffmpy google-cloud-storage google-api-python-client
 RUN mkdir -p /tmp/video_conversion
 
 # Forward Port
