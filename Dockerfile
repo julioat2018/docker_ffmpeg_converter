@@ -11,8 +11,9 @@ COPY . ./
 #RUN echo 'deb http://ftp.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y ffmpeg
-RUN pip install Flask gunicorn ffmpy google-cloud-storage google-api-python-client
+RUN pip install Flask gunicorn ffmpy google-cloud-storage google-api-python-client opencv-python numpy
 RUN mkdir -p /tmp/video_conversion
+RUN mkdir -p /tmp/image_extraction
 
 # Forward Port
 EXPOSE 5000
